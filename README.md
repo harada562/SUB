@@ -50,15 +50,12 @@ https://docs.google.com/spreadsheets/d/1UIEe3aswPfoaLeIGcCW8BCvjLjLQI04YsKqbWyDd
 - Rails 5.2.4.4
 
 ### 本番環境
-- AWS 
+- AWS
 - MySQL2
 - Nginx、 Puma
-- Docker
-- Circle CI
-- Kubernetes
 
 ### テスト
-- Rspec 
+- Rspec
 
 ### その他主な使用技術
 - 非同期通信 (フォロー・いいね・コメント・チャット)
