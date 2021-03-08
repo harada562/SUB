@@ -1,5 +1,4 @@
 class SearchController < ApplicationController
-
   def search
     @model = params["search"]["model"]
     @content = params["search"]["content"]
@@ -7,8 +6,7 @@ class SearchController < ApplicationController
     @datas = search_for(@how, @model, @content)
   end
 
-
-  #楽天API商品検索
+  # 楽天API商品検索
   def index
     if params[:keyword]
       items = SearchForm.new(keyword: params[:keyword])
@@ -21,11 +19,9 @@ class SearchController < ApplicationController
     end
   end
 
-
-
   private
 
-  def match(model,content)
+  def match(model, content)
     if model == 'Users'
       User.where(name: content)
     elsif model == 'Books'
@@ -62,12 +58,11 @@ class SearchController < ApplicationController
     when 'match'
       match(model, content)
     when 'forward'
-      forward(model,content)
+      forward(model, content)
     when 'backward'
       backward(model, content)
     when 'partial'
       partial(model, content)
     end
   end
-
 end
