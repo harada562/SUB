@@ -7,25 +7,25 @@ class User < ApplicationRecord
   has_many :books
   attachment :profile_image, destroy: false
 
-  validates :name, length: {maximum: 20, minimum: 2}, uniqueness: true
-  validates :introduction, length: {maximum: 50}
+  validates :name, length: { maximum: 20, minimum: 2 }, uniqueness: true
+  validates :introduction, length: { maximum: 500 }
 
   has_many :favorites, dependent: :destroy
   has_many :book_comments, dependent: :destroy
 
   has_many :active_relationships,  class_name: "Relationship",
-                                  foreign_key: "follower_id",
-                                    dependent: :destroy
+                                   foreign_key: "follower_id",
+                                   dependent: :destroy
 
   has_many :passive_relationships, class_name: "Relationship",
-                                  foreign_key: "followed_id",
-                                    dependent: :destroy
+                                   foreign_key: "followed_id",
+                                   dependent: :destroy
 
   has_many :following,                through: :active_relationships,
-                                       source: :followed
+                                      source: :followed
 
   has_many :followers,                through: :passive_relationships,
-                                       source: :follower
+                                      source: :follower
 
   # ユーザーをフォローする　<＜は配列に追加の意味
   def follow(other_user)
@@ -46,7 +46,6 @@ class User < ApplicationRecord
   has_many :chats
   has_many :rooms, through: :user_rooms
 
-
   # guestログイン
   def self.guest
     find_or_create_by!(email: 'guest@example.com') do |end_user|
@@ -54,6 +53,4 @@ class User < ApplicationRecord
       end_user.name = "ゲスト太郎"
     end
   end
-
-
 end

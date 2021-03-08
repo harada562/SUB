@@ -9,7 +9,7 @@ Rails.application.routes.draw do
 
   devise_for :users
 
-  resources :users,only: [:show,:index,:edit,:update] do
+  resources :users, only: [:show, :index, :edit, :update] do
     member do
       get :following, :followers
     end
@@ -28,5 +28,4 @@ Rails.application.routes.draw do
   resources :chats, only: [:create]
 
   get 'rakuten_search' => 'search#index'
-
 end
