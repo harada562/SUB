@@ -74,10 +74,10 @@ gem 'font-awesome-sass', '~> 5.13'
 gem 'kaminari'
 gem 'kaminari-bootstrap', '~> 3.0.1'
 
-gem 'dotenv-rails'
-group :production do
-  gem 'mysql2'
-end
+# gem 'dotenv-rails'
+# group :production do
+#   gem 'mysql2'
+# end
 
 gem 'carrierwave'
 gem 'fog-aws'
