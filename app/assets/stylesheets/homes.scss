@@ -109,3 +109,45 @@ header{
 	font-size: 23px;
 }
 
+/*ウィンドウ幅が最大479pxまでの場合に適用*/
+@media screen and (max-width: 479px) {
+	.homes_top_item{
+    	top: 20px;
+    	left: 10px;
+	}
+	.homes_top_item h1{
+		font-size: 50px;
+		padding-top: 80px;
+		padding-bottom: 50px;
+	}
+	.homes_top_item p{
+		font-size: 15px;
+	}
+	.homes_top_user_singin_up{
+		margin-bottom: 40px;
+		margin-right: 0;
+	}
+	.homes_midole_item1_top{
+		padding-top: 30px;
+		padding-left: 0;
+	}
+	.homes_midole_item2_box {
+  		flex-direction: column-reverse;
+	}
+	.homes_midole_item2_midole{
+		padding-left: 0;
+		padding-top: 40px;
+		padding-bottom: 40px;
+	}
+	.homes_midole_item2 img{
+		margin-top: 40px;
+		width: 100%;
+	}
+	.homes_bottom_item2_bottom{
+		padding-left: 0;
+		padding-top: 40px;
+	}
+	.homes_bottom_item3 img{
+		width: 100%;
+	}
+}
